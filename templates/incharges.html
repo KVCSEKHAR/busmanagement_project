@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of All Buses</title>
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="header">
+    <div class="jumbotron text-center">
+      <h1>Welcome to College Bus Management System</h1>
+      <p>Manage your buses, drivers, routes, and enrollments with ease.</p>
+    </div>
+
+  </div>
+
+
+
+  <div class="container">
+    <h1 class="text-center mb-4">List of All Bus Incharges Information</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Name of the Incharge</th>
+              <th scope="col">Contact Number</th>
+              <th scope="col">Bus Number</th>
+              <th scope="col">Route</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+           
+          </tbody>
+        </table>
+      <button onclick="location.href='/'" class="btn btn-primary">Back</button>
+
+      </div>
+
+      <!-- Add more cards as needed for additional buses -->
+    </div>
+  </div>
+
+  <div class="footer">
+
+    <p class="text-center">© 2024 Developed by K.V.Chandrasekhar, Assistant Professor, Department of CSM & CSD
+    </p>
+
+  </div>
+
+
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
