@@ -1,5 +1,5 @@
 from django.contrib import admin 
-from django.urls import path 
+from django.urls import path , include
 from django.conf.urls.static import static 
 from django.conf import  settings 
 
@@ -18,6 +18,7 @@ urlpatterns = [
     path('staff/', staff, name='staff'), 
     path('students/', students, name='students'), 
     path('addbus/', addbus, name='addbus'), 
+    path('accounts/', include('accounts.urls')),
 
     
 ]

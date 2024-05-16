@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'students',
     'routes',
     'enrollments',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -143,7 +144,6 @@ USE_TZ = True
 # Media files (Images, Audios, Videos)
 
 MEDIA_URL ='/media/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
