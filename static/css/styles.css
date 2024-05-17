@@ -1,10 +1,19 @@
 body {
     background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
 }
 
-.container {
+/* .container {
     margin-top: 50px;
-}
+} */
+
+.myNav {
+    background-color: #007bff;
+  }
+  
+  .myNav a {
+    color: #fff;
+  }
 
 .jumbotron {
     background-color: #007bff;
@@ -22,11 +31,14 @@ body {
     height: auto;
 }
 
-.header {
+/* .header {
     background-color: #007afc;
     color: #fff;
     padding: 5px 0;
-}
+} */
+
+.header{
+display: block;}
 
 .footer {
     background-color: #007afc;

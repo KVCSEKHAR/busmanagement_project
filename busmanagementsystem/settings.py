@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'routes',
     'enrollments',
     'accounts',
+    'incharges',
+    'staff'
 ]
 
 MIDDLEWARE = [

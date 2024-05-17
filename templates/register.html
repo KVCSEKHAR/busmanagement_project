@@ -11,12 +11,7 @@
   </head>
 
   <body>
-    <div class="header">
-      <div class="jumbotron text-center">
-        <h1>Welcome to College Bus Management System</h1>
-        <p>Manage your buses, drivers, routes, and enrollments with ease.</p>
-      </div>
-    </div>
+    {% include 'header.html' %}
 
     <div class="container">
       <h1 class="text-center mb-4">Registration</h1>
@@ -55,6 +50,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
+
+    {% include 'footer.html' %}
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>

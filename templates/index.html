@@ -1,107 +1,89 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>College Bus Management System</title>
     <!-- Bootstrap CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     <!-- Custom CSS -->
     <style>
-
+      body {
+        padding-top: 70px; /* Adjust padding to accommodate the fixed navbar */
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+   {% include 'header.html' %}
 
-    <div class="header">
-
-        <div class="jumbotron text-center">
-            <h1>Welcome to College Bus Management System</h1>
-            <p>Manage your buses, drivers, routes, and enrollments with ease.</p>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Buses Information</h5>
+              <p class="card-text">All Bus Information Available Here</p>
+              <a href="/buses/" class="btn btn-primary">View Buses</a>
+            </div>
+          </div>
         </div>
-
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Drivers Information</h5>
+              <p class="card-text">All Driver Information Available Here</p>
+              <a href="/drivers/" class="btn btn-primary">View Drivers</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Routes Information</h5>
+              <p class="card-text">All Bus Routes Information Available Here</p>
+              <a href="/routes/" class="btn btn-primary">View Routes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bus Incharge Information</h5>
+              <p class="card-text">All Bus Incharge Information Available Here</p>
+              <a href="/incharges/" class="btn btn-primary">View Incharges</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Staff Information</h5>
+              <p class="card-text">All Transport Staff Information Available Here</p>
+              <a href="/staff/" class="btn btn-primary">View Staff</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Student Information</h5>
+              <p class="card-text">All Student Information Available Here</p>
+              <a href="/students/" class="btn btn-primary">View Students</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Buses Information</h5>
-                        <p class="card-text">All Bus Information Availble Here</p>
-                        <a href="/buses/" class="btn btn-primary">View Buses</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Drivers Information</h5>
-                        <p class="card-text">All Driver Information Availble Here</p>
-                        <a href="/drivers/" class="btn btn-primary">View Drivers</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Routes Information</h5>
-                        <p class="card-text">All Bus Routes Information Availble Here</p>
-                        <a href="/routes/" class="btn btn-primary">View Routes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Bus Incharge Information</h5>
-                        <p class="card-text">All Bus Incharge Information Availble Here</p>
-                        <a href="/incharges/" class="btn btn-primary">View Incharges</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Staff Information</h5>
-                        <p class="card-text">All Transport Staff Information Availble Here</p>
-                        <a href="/staff/" class="btn btn-primary">View Staff</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Student Information</h5>
-                        <p class="card-text">All Student Information Availble Here</p>
-                        <a href="/students/" class="btn btn-primary">View Students</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="footer">
-
-        <p class="text-center">© 2024 Developed by K.V.Chandrasekhar, Assistant Professor, Department of CSM & CSD
-        </p>
-
-    </div>
-
+    {% include 'footer.html' %}
 
     <!-- Bootstrap JS and dependencies -->
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-</body>
-
+  </body>
 </html>
