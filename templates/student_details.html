@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bus Information</title>
+    <title>Student Information</title>
     <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -35,17 +35,17 @@
         <div class="col-md-8">
           <div class="card">
             <div class="card-header">
-              <h2>Bus Number: {{ bus.bus_no }}</h2>
+              <h2>{{ student.roll_number }}</h2>
             </div>
             <div class="card-body">
               <p>
-                <strong>Registration Number:</strong> {{ bus.bus_reg_no }}
+                <strong>Student Full Name:</strong> {{ student.first_name }} {{student.last_name}}
               </p>
               <p>
-                <strong>Route:</strong> {{ bus.bus_route }}
+                <strong>Bording Point:</strong> {{ student.boarding_point }}
               </p>
               <p>
-                <strong>Bus Model:</strong> {{ bus.bus_model }}
+                <strong>Bus Details:</strong> {{ student.bus }}
               </p>
               <p>
                 <strong>Sitting Capacity:</strong> {{ bus.bus_sitting_capacity }}

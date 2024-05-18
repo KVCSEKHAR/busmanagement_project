@@ -1,6 +1,7 @@
 from django.shortcuts import render 
 from django.http import HttpResponse
 from buses.models import Buses
+from students.models import Student
 
 
 
@@ -27,7 +28,9 @@ def staff(request):
     return render(request,"staff.html")
 
 def students(request):
-    return render(request,"students.html")
+    student = Student.objects.all()
+    bus = Student.objects.all()
+    return render(request,"students.html",{'student': student})
 
 def addbus(request):
     if request.method=='POST':

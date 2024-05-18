@@ -18,29 +18,32 @@
 
 
 
-  <div class="container">
-    <h1 class="text-center mb-4">List of All Bus Drivers Information</h1>
+  <div class="container mt-5">
+    <h3 class="text-left">Drivers Information</h3>
     <div class="row">
       <div class="col-md-12">
         <table class="table table-hover">
           <thead>
             <tr>
               <th scope="col">S.No</th>
-              <th scope="col">Name of the Driver</th>
-              <th scope="col">Contact Number</th>
+              <th scope="col">Driver Name</th>
+              <th scope="col">Contact Details</th>
               <th scope="col">Bus Number</th>
               <th scope="col">Route</th>
+              <th scope="col">Details</th>
             </tr>
           </thead>
           <tbody>
             {% block content %}
             {% for  i in bus  %}
             <tr>
-              <th scope="row">1</th>
+           
+              <th scope="row">{{forloop.counter}}</th>
               <td>{{i.bus_driver_name}}</td>
               <td>{{i.bus_driver_contact}}</td>
               <td>{{i.bus_no}}</td>
               <td>{{i.bus_route}}</td>
+              <td><button onclick="location.href='/buses/bus/{{i.bus_no}}'" class="btn btn-primary">Details</button></td>
             </tr>
             {% endfor %}
             {% endblock content %}

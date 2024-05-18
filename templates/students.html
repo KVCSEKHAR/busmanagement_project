@@ -14,41 +14,39 @@
 
 <body>
 
-  <div class="header">
-    <div class="jumbotron text-center">
-      <h1>Welcome to College Bus Management System</h1>
-      <p>Manage your buses, drivers, routes, and enrollments with ease.</p>
-    </div>
-
-  </div>
+  {% include 'header.html' %}
 
 
 
-  <div class="container">
-    <h1 class="text-center mb-4">List of All Student Information</h1>
+  <div class="container mt-5">
+    <h3 class="text-left">Student Information</h3>
     <div class="row">
       <div class="col-md-12">
         <table class="table table-hover">
           <thead>
             <tr>
               <th scope="col">S.No</th>
+              <th scope="col">Student Name</th>
               <th scope="col">Roll Number</th>
-              <th scope="col">Branch</th>
-              <th scope="col">Name of the Student</th>
-              <th scope="col">Assigned Bus Number</th>
+              <th scope="col">Bus Number</th>
+              <th scope="col">Bording Point</th>
+              <th scope="col">Details</th>
             </tr>
           </thead>
           <tbody>
+            {% block content %}
+            {% for  i in student  %}
             <tr>
-              <th scope="row">1</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-
-             
+           
+              <th scope="row">{{forloop.counter}}</th>
+              <td>{{i.first_name}}</td>
+              <td>{{i.roll_number}}</td>
+              <td>{{i.bus}}</td>
+              <td>{{i.boarding_point}}</td>
+              <td><button onclick="location.href='/students/student/{{i.roll_number}}'" class="btn btn-primary">Details</button></td>
             </tr>
-
+            {% endfor %}
+            {% endblock content %}
           </tbody>
         </table>
 

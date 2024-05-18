@@ -13,8 +13,8 @@
   <body>
     {% include 'header.html' %}
 
-    <div class="container">
-      <h1 class="text-center mb-4">List of All Buses</h1>
+    <div class="container mt-5">
+      <h1 class="text-left ">List of All Buses</h1>
       <div class="row">
         {% block content %}
           {% for i in bus %}
@@ -24,7 +24,7 @@
                   <h5 class="card-title">{{ i.bus_no }}</h5>
                   <p class="card-text">Capacity: {{ i.bus_sitting_capacity }}</p>
                   <p class="card-text">Destination: {{ i.bus_route }}</p>
-                  <a href="/buses/1/" class="btn btn-primary">View Details</a>
+                  <a href="/buses/bus/{{ i.bus_no }}/" class="btn btn-primary">View Details</a>
                 </div>
               </div>
             </div>

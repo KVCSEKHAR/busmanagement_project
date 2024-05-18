@@ -19,8 +19,10 @@ urlpatterns = [
     path('students/', students, name='students'), 
     path('addbus/', addbus, name='addbus'), 
     path('accounts/', include('accounts.urls')),
+    path('buses/', include('buses.urls')),
+    path('students/', include('students.urls')),
     
-    re_path(r'^.*$', index, name='index')
+    # re_path(r'^.*$', index, name='index')
    
 ]
 
