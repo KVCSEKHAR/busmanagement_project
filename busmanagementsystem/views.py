@@ -1,7 +1,9 @@
 from django.shortcuts import render 
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from buses.models import Buses
 from students.models import Student
+
 
 
 
@@ -32,6 +34,8 @@ def students(request):
     bus = Student.objects.all()
     return render(request,"students.html",{'student': student})
 
+
+@login_required
 def addbus(request):
     if request.method=='POST':
         bus_no = request.POST['bus_no']

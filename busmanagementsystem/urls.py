@@ -9,7 +9,7 @@ from .views import index,buses,drivers,routes,incharges,staff,students,addbus
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('dj-admin/', admin.site.urls),
     path('', index, name='index'),
     path('buses/', buses, name='buses'),
     path('drivers/', drivers, name='drivers'),
