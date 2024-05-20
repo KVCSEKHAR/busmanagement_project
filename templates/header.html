@@ -28,7 +28,7 @@
               <a class="nav-link" href="/students/">Students</a>
             </li>
             {% if user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link" href="#">Hello, {{ user.username}} </a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Hello, {{ user.username}} {{ user_type}} </a></li>
               <li class="nav-item">
                 <a class="nav-link" href="/accounts/logout">Logout</a>
               </li>

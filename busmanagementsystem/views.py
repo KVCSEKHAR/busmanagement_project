@@ -3,12 +3,16 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from buses.models import Buses
 from students.models import Student
+from accounts.models import Profile
 
 
 
 
+@login_required
 def index(request):
-    return render(request,"index.html")
+    user_profile = Profile.objects.get(user=request.user)
+    return render(request, 'index.html', {'user_type': user_profile.user_type})
+    
 
 def buses(request):
     bus = Buses.objects.all() 
@@ -33,6 +37,8 @@ def students(request):
     student = Student.objects.all()
     bus = Student.objects.all()
     return render(request,"students.html",{'student': student})
+
+
 
 
 @login_required
