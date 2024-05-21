@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        padding-top: 70px; /* Adjust padding to accommodate the fixed navbar */
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Buses Information</h5>
+              <p class="card-text">Bus Information Available Here</p>
+              <a href="#" class="btn btn-info">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Drivers Information</h5>
+              <p class="card-text">Driver Information Available Here</p>
+              <a href="#" class="btn btn-info">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Routes Information</h5>
+              <p class="card-text">Bus Route Information Available Here</p>
+              <a href="#" class="btn btn-info">View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Bus Incharge Information</h5>
+              <p class="card-text">Bus Incharge Information Available Here</p>
+              <a href="#" class="btn btn-info">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Staff Information</h5>
+              <p class="card-text">All Transport Staff Information Available Here</p>
+              <a href="#" class="btn btn-info">View</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">All Registrations</h5>
+              <p class="card-text">Registrations Process Available Here</p>
+              <a href="#" class="btn btn-success">Bus Registration</a>
+              <a href="#" class="btn btn-danger">Complaint Registration</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

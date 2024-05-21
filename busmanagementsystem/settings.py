@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'enrollments',
     'accounts',
     'incharges',
-    'staff'
+    'staff',
 ]
 
 MIDDLEWARE = [
