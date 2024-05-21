@@ -3,7 +3,19 @@
     <nav class="navbar navbar-expand-lg fixed-top myNav">
       <div class="container">
         <!-- Brand/Logo aligned to the right -->
-        <a class="navbar-brand ms-auto" href="/">College Bus Management System</a>
+        {% if user.is_authenticated %}
+          {% if user_type == 'admin' %}
+            <a class="navbar-brand ms-auto" href="/accounts/admin/">College Bus Management System</a>
+          {% elif user_type == 'driver' %}
+            <a class="navbar-brand ms-auto" href="/accounts/driver/">College Bus Management System</a>
+          {% elif user_type == 'incharge' %}
+            <a class="navbar-brand ms-auto" href="/accounts/incharge/">College Bus Management System</a>
+          {% elif user_type == 'student' %}
+            <a class="navbar-brand ms-auto" href="/accounts/student/">College Bus Management System</a>
+          {% endif %}
+        {% else %}
+          <a class="navbar-brand ms-auto" href="/accounts/login/">College Bus Management System</a>
+        {% endif %}
         <!-- Navbar Toggler Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <!-- Navbar Links aligned to the left -->
@@ -28,7 +40,9 @@
               <a class="nav-link" href="/students/">Students</a>
             </li>
             {% if user.is_authenticated %}
-              <li class="nav-item"><a class="nav-link" href="#">Hello, {{ user.username}} {{ user_type}} </a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Hello, {{ user.username }} {{ user_type }}</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="/accounts/logout">Logout</a>
               </li>
