@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style></style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="container">
+      {% block content %}
+        <h2>Incharge Details</h2>
+        <p>
+          <strong>Name:</strong> {{ incharge.name }}
+        </p>
+        <p>
+          <strong>Contact:</strong> {{ incharge.contact }}
+        </p>
+        <p>
+          <strong>Email:</strong> {{ incharge.email }}
+        </p>
+        <p>
+          <strong>Assigned Bus:</strong> {{ incharge.assigned_bus }}
+        </p>
+        <a href="{% url 'incharge_list' %}" class="btn btn-secondary">Back to List</a>
+      {% endblock %}
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

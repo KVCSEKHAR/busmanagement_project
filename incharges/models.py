@@ -1,13 +1,12 @@
+# incharges/models.py
+
 from django.db import models
 
-from buses.models import Buses
-
-# Create your models here.
-
 class Incharge(models.Model):
-    name = models.CharField(max_length=50)
-    contact = models.CharField(max_length=50)
-    bus = models.OneToOneField(Buses, on_delete=models.CASCADE, related_name='incharge')
+    name = models.CharField(max_length=100)
+    contact = models.CharField(max_length=15)
+    email = models.EmailField(unique=True)
+    assigned_bus = models.OneToOneField('buses.Buses', on_delete=models.SET_NULL, null=True, blank=True, related_name='incharge')
 
     def __str__(self):
         return self.name

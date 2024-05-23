@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style></style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="container">
+      <h1>Drivers</h1>
+      <a href="{% url 'driver_create' %}" class="btn btn-primary mb-3">Add New Driver</a>
+      <div class="row">
+        {% for driver in drivers %}
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h5 class="card-title">{{ driver.name }}</h5>
+                <p class="card-text">{{ driver.contact }}</p>
+                <a href="{% url 'driver_detail' driver.pk %}" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

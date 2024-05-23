@@ -1,22 +1,14 @@
 body {
     background-color: #f8f9fa;
     font-family: 'Roboto', sans-serif;
+    padding-top: 70px;
 }
-
-/* .container {
-    margin-top: 50px;
-} */
 
 .myNav {
     background-color: #007bff;
-  }
-  
-  .myNav a {
-    color: #fff;
-  }
+}
 
-.jumbotron {
-    background-color: #007bff;
+.myNav a {
     color: #fff;
 }
 
@@ -31,14 +23,10 @@ body {
     height: auto;
 }
 
-/* .header {
-    background-color: #007afc;
-    color: #fff;
-    padding: 5px 0;
-} */
-
-.header{
-display: block;}
+.header {
+    display: block;
+    margin-bottom: 15px;
+}
 
 .footer {
     background-color: #007afc;

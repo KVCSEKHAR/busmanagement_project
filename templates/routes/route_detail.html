@@ -1,0 +1,32 @@
+<!-- routes/templates/routes/route_detail.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style></style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    {% block content %}
+      <h1>{{ route.route_name }}</h1>
+      <p>Start Location: {{ route.start_location }}</p>
+      <p>End Location: {{ route.end_location }}</p>
+      <p>Route Number: {{ route.route_number }}</p>
+      <p>Active: {{ route.active }}</p>
+      <a href="{% url 'route_update' route.pk %}">Edit</a>
+      <form action="{% url 'route_delete' route.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete" />
+      </form>
+    {% endblock %}
+    {% include 'footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of All Buses</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="container">
+      {% block content %}
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-left">Bus List</h3>
+            <div class="table table-responsive">
+              <table class="table table-hover">
+                <tbody>
+                  {% for bus in buses %}
+                    <tr>
+                      <th scope="row">{{ bus.bus_no }} - {{ bus.bus_model }}</th>
+                      <td>
+                        <button onclick="location.href='{% url 'bus_update' bus.pk %}'" class="btn btn-warning">Edit</button>
+                      </td>
+                      <td>
+                        <button onclick="location.href='{% url 'bus_delete' bus.pk %}'" class="btn btn-danger">Delete</button>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Add more cards as needed for additional buses -->
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button onclick="location.href='{% url 'bus_create' %}'" class="btn btn-primary">Add New Bus</button>
+          </div>
+        </div>
+      {% endblock %}
+    </div>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

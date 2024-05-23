@@ -1,0 +1,14 @@
+{% include 'header.html' %}
+
+
+{% block content %}
+  <h2>Are you sure you want to delete "{{ bus.bus_no }} - {{ bus.bus_model }}"?</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'bus_list' %}">Cancel</a>
+  </form>
+{% endblock %}
+
+
+{% include 'footer.html' %}

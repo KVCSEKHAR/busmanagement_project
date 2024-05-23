@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style></style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="container">
+      {% block content %}
+        <h2>Incharge List</h2>
+        <a href="{% url 'incharge_create' %}" class="btn btn-primary mb-3">Add New Incharge</a>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Contact</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for incharge in incharges %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ incharge.name }}</td>
+                <td>{{ incharge.contact }}</td>
+                <td>{{ incharge.email }}</td>
+                <td>
+                  <a href="{% url 'incharge_details' incharge.pk %}" class="btn btn-info">Details</a>
+                  <a href="{% url 'incharge_update' incharge.pk %}" class="btn btn-warning">Edit</a>
+                  <a href="{% url 'incharge_delete' incharge.pk %}" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endblock %}
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

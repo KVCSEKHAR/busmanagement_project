@@ -1,0 +1,51 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style></style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {% block content %}
+            <h1>Students</h1>
+            <a href="{% url 'staff_create' %}">Add Staff</a>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name of the Staff</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for staff_member in staff_members %}
+                  <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ staff_member.first_name }} {{ staff_member.last_name }}</td>
+                    <td>
+                      <a class="btn btn-primary" href="{% url  'staff_detail' staff_member.pk  %}">View Details</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style></style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {% block content %}
+            <h1>Route Information</h1>
+            <a class="btn btn-primary" href="{% url 'route_create' %}">Add Route</a>
+            <div class="table-responsive">
+              <table class="table table-bordered mt-2">
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Name of the Route</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {% for route in routes %}
+                    <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ route.route_name }}</td>
+                      <td>
+                        <a class="btn btn-primary" href="{% url 'route_detail' route.pk %}">View Details</a>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>

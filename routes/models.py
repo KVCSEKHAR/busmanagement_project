@@ -1,13 +1,12 @@
+# routes/models.py
 from django.db import models
 
-# Create your models here.
-
-from buses.models import Buses
-
-
 class Route(models.Model):
-    name = models.CharField(max_length=50)
-    buses = models.ManyToManyField(Buses, related_name='routes')
+    route_name = models.CharField(max_length=100)
+    start_location = models.CharField(max_length=100)
+    end_location = models.CharField(max_length=100)
+    route_number = models.CharField(max_length=10, unique=True)
+    active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name
+        return self.route_name

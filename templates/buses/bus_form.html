@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Information</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+      .card {
+        margin-top: 20px;
+      }
+      .card-header {
+        background-color: #007bff;
+        color: white;
+      }
+      .card-body img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+
+    <div class="container mb-5">
+      <h1 class="text-center mb-4">Add Bus Information</h1>
+
+      {% block content %}
+        <h2>
+          {% if form.instance.pk %}
+            Edit Bus
+          {% else %}
+            Add New Bus
+          {% endif %}
+        </h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      {% endblock %}
+    </div>
+
+    {% include 'footer.html' %}
+  </body>
+</html>

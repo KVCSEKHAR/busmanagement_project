@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Bus Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style></style>
+  </head>
+
+  <body>
+    {% include 'header.html' %}
+    <div class="container">
+      <h1>{{ driver.name }}</h1>
+      <p>Contact: {{ driver.contact }}</p>
+      <p>License Number: {{ driver.license_number }}</p>
+      <p>Address: {{ driver.address }}</p>
+      <p>Bus Assigned: {{ driver.bus_assigned }}</p>
+      <a href="{% url 'driver_update' driver.pk %}" class="btn btn-primary">Edit</a>
+      <form action="{% url 'driver_delete' driver.pk %}" method="POST" class="d-inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
