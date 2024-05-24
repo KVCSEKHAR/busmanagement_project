@@ -9,153 +9,151 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     <!-- Custom CSS -->
-    <style>
-    </style>
+    <style></style>
   </head>
 
   <body>
     {% include 'header.html' %}
-
-    <div class="container">
-      <div class="row g-3">
-        <div class="col-md-2">
-          <div class="card text-center">
-            <div class="card-body">
-              <div>
-                <div class="card-number">9</div>
-                <div class="card-text">Buses</div>
-                <a href="#" class="btn btn-success">View</a>
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-md-2">
+            <div class="card text-center">
+              <div class="card-body">
+                <div>
+                  <div class="card-number">{{ buscount }}</div>
+                  <div class="card-text">Buses</div>
+                  <a href="/buses/" class="btn btn-success">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card text-center">
+              <div class="card-body">
+                <div>
+                  <div class="card-number">{{ drivercount }}</div>
+                  <div class="card-text">Drivers</div>
+                  <a href="/drivers/" class="btn btn-warning">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card text-center">
+              <div class="card-body">
+                <div>
+                  <div class="card-number">{{routecount}}</div>
+                  <div class="card-text">Routes</div>
+                  <a href="/routes/" class="btn btn-danger">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card text-center">
+              <div class="card-body">
+                <div>
+                  <div class="card-number">{{inchargecount}}</div>
+                  <div class="card-text">Incharges</div>
+                  <a href="/incharges/" class="btn btn-info">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card text-center">
+              <div class="card-body">
+                <div>
+                  <div class="card-number">{{staffcount}}</div>
+                  <div class="card-text">Staff</div>
+                  <a href="/staff/" class="btn btn-primary">View</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card text-center">
+              <div class="card-body">
+                <div>
+                  <div class="card-number">{{studentcount}}</div>
+                  <div class="card-text">Students</div>
+                  <a href="/students/" class="btn btn-success">View</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-2">
-          <div class="card text-center">
-            <div class="card-body">
-              <div>
-                <div class="card-number">17</div>
-                <div class="card-text">Drivers</div>
-                <a href="#" class="btn btn-warning">View</a>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Buses Information</h5>
+                <p class="card-text">All Bus Information Manage Here</p>
+                <a href="/buses/create" class="btn btn-success">Create</a>
+                <a href="/buses" class="btn btn-warning">Update</a>
+                <a href="/buses" class="btn btn-danger">Delete</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Drivers Information</h5>
+                <p class="card-text">All Driver Information Manage Here</p>
+                <a href="/drivers/new" class="btn btn-success">Create</a>
+                <a href="/drivers/" class="btn btn-warning">Update</a>
+                <a href="/drivers/" class="btn btn-danger">Delete</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Routes Information</h5>
+                <p class="card-text">All Bus Route Information Manage Here</p>
+                <a href="/routes/new" class="btn btn-success">Create</a>
+                <a href="/routes" class="btn btn-warning">Update</a>
+                <a href="/routes/" class="btn btn-danger">Delete</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-2">
-          <div class="card text-center">
-            <div class="card-body">
-              <div>
-                <div class="card-number">33</div>
-                <div class="card-text">Routes</div>
-                <a href="#" class="btn btn-danger">View</a>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Bus Incharge Information</h5>
+                <p class="card-text">All Bus Incharge Information Manage Here</p>
+                <a href="/incharges/create/" class="btn btn-success">Create</a>
+                <a href="/incharges/" class="btn btn-warning">Update</a>
+                <a href="/incharges/" class="btn btn-danger">Delete</a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="card text-center">
-            <div class="card-body">
-              <div>
-                <div class="card-number">9</div>
-                <div class="card-text">Incharges</div>
-                <a href="#" class="btn btn-info">View</a>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Staff Information</h5>
+                <p class="card-text">All Transport Staff Information Manage Here</p>
+                <a href="/staff/new/" class="btn btn-success">Create</a>
+                <a href="/staff/" class="btn btn-warning">Update</a>
+                <a href="/staff/" class="btn btn-danger">Delete</a>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="card text-center">
-            <div class="card-body">
-              <div>
-                <div class="card-number">12</div>
-                <div class="card-text">Staff</div>
-                <a href="#" class="btn btn-primary">View</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="card text-center">
-            <div class="card-body">
-              <div>
-                <div class="card-number">33</div>
-                <div class="card-text">Students</div>
-                <a href="#" class="btn btn-success">View</a>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Student Information</h5>
+                <p class="card-text">All Student Information Manage Here</p>
+                <a href="/students/new" class="btn btn-success">Create</a>
+                <a href="/students/" class="btn btn-warning">Update</a>
+                <a href="/students/" class="btn btn-danger">Delete</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Buses Information</h5>
-              <p class="card-text">All Bus Information Manage Here</p>
-              <a href="/buses/create" class="btn btn-success">Create</a>
-              <a href="/buses" class="btn btn-warning">Update</a>
-              <a href="/buses" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Drivers Information</h5>
-              <p class="card-text">All Driver Information Manage Here</p>
-              <a href="/drivers/new" class="btn btn-success">Create</a>
-              <a href="/drivers/" class="btn btn-warning">Update</a>
-              <a href="/drivers/" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Routes Information</h5>
-              <p class="card-text">All Bus Route Information Manage Here</p>
-              <a href="/routes/new" class="btn btn-success">Create</a>
-              <a href="/routes" class="btn btn-warning">Update</a>
-              <a href="/routes/" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Bus Incharge Information</h5>
-              <p class="card-text">All Bus Incharge Information Manage Here</p>
-              <a href="/incharges/create/" class="btn btn-success">Create</a>
-              <a href="/incharges/" class="btn btn-warning">Update</a>
-              <a href="/incharges/" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Staff Information</h5>
-              <p class="card-text">All Transport Staff Information Manage Here</p>
-              <a href="/staff/new/" class="btn btn-success">Create</a>
-              <a href="/staff/" class="btn btn-warning">Update</a>
-              <a href="/staff/" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Student Information</h5>
-              <p class="card-text">All Student Information Manage Here</p>
-              <a href="/students/new" class="btn btn-success">Create</a>
-              <a href="/students/" class="btn btn-warning">Update</a>
-              <a href="/students/" class="btn btn-danger">Delete</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     {% include 'footer.html' %}
 

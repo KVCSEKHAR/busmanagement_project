@@ -17,6 +17,13 @@
     <div class="container">
       <h1>Drivers</h1>
       <a href="{% url 'driver_create' %}" class="btn btn-primary mb-3">Add New Driver</a>
+      {% if messages %}
+        <div class="alert alert-danger">
+          {% for message in messages %}
+            <strong>{{ message }}</strong>
+          {% endfor %}
+        </div>
+      {% endif %}
       <div class="row">
         {% for driver in drivers %}
           <div class="col-md-4">

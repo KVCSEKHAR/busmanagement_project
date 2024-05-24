@@ -18,6 +18,13 @@
       {% block content %}
         <h2>Incharge List</h2>
         <a href="{% url 'incharge_create' %}" class="btn btn-primary mb-3">Add New Incharge</a>
+        {% if messages %}
+          <div class="alert alert-danger">
+            {% for message in messages %}
+              <strong>{{ message }}</strong>
+            {% endfor %}
+          </div>
+        {% endif %}
         <table class="table table-bordered">
           <thead>
             <tr>

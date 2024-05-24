@@ -9,13 +9,27 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     <!-- Custom CSS -->
-    <style></style>
+    <style>
+      .card {
+        margin-top: 20px;
+      }
+      .card-header {
+        background-color: #007bff;
+        color: white;
+      }
+      .card-body img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 10px;
+      }
+    </style>
   </head>
 
   <body>
     {% include 'header.html' %}
-    <div class="container">
-      <h1>{{ form.instance.pk|yesno:'Edit Driver,Add New Driver' }}</h1>
+    <div class="container mb-5">
+      <h1 class="text-center mb-4">{{ form.instance.pk|yesno:'Edit Driver,Add New Driver' }}</h1>
       <form method="POST">
         {% csrf_token %}
         <div class="mb-3">{{ form.as_p }}</div>

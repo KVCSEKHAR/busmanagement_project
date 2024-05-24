@@ -4,7 +4,14 @@ from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserRegisterForm
-from . models import Profile
+from .models import Profile
+from buses.models import Buses
+from drivers.models import Driver
+from routes.models import Route
+from incharges.models import Incharge
+from staff.models import Staff
+from students.models import Student
+
 
 def register(request):
     if request.method == 'POST':
@@ -62,10 +69,16 @@ def logout(request):
   return redirect('/')
 
 def admin(request):
-    return render(request, 'adminboard.html')
+    buscount = Buses.objects.count()
+    drivercount = Driver.objects.count()
+    routecount =  Route.objects.count()
+    inchargecount = Incharge.objects.count()
+    staffcount = Staff.objects.count()
+    studentcount = Student.objects.count()
+    return render(request, 'adminboard.html',{'buscount': buscount,'drivercount': drivercount, 'routecount': routecount, 'inchargecount': inchargecount, 'staffcount': staffcount, 'studentcount': studentcount})
 
 def driver(request):
-    return render(request, 'driverboard.html')
+    return render(request, 'driverboard.html',{})
 
 def incharge(request):
     return render(request, 'inchargeboard.html')

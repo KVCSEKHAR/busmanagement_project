@@ -51,6 +51,13 @@
                 <div class="col-md-12">
                   <div class="card">
                     <div class="card-body text-center">
+                      {% if messages %}
+                        <div class="alert alert-danger">
+                          {% for message in messages %}
+                            <strong>{{ message }}</strong>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
                       <table>
                         <tr>
                           <td>

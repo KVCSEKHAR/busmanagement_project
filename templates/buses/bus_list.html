@@ -41,6 +41,13 @@
         <div class="row">
           <div class="col-md-12">
             <button onclick="location.href='{% url 'bus_create' %}'" class="btn btn-primary">Add New Bus</button>
+            {% if messages %}
+              <div class="alert alert-danger">
+                {% for message in messages %}
+                  <strong>{{ message }}</strong>
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
         </div>
       {% endblock %}

@@ -16,19 +16,22 @@
   <body>
     {% include 'header.html' %}
     {% block content %}
-      <h1>
-        {% if form.instance.pk %}
-          Edit
-        {% else %}
-          Add
-        {% endif %}Staff Member
-      </h1>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-      </form>
+      <div class="container mb-5">
+        <h1>
+          {% if form.instance.pk %}
+            Edit
+          {% else %}
+            Add
+          {% endif %}Staff Member
+        </h1>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
     {% endblock %}
+
     {% include 'footer.html' %}
   </body>
 </html>

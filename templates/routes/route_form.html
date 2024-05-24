@@ -15,20 +15,22 @@
 
   <body>
     {% include 'header.html' %}
-    {% block content %}
-      <h1>
-        {% if form.instance.pk %}
-          Edit
-        {% else %}
-          Add
-        {% endif %}Route
-      </h1>
-      <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-      </form>
-    {% endblock %}
+    <div class="container mb-5">
+      {% block content %}
+        <h1>
+          {% if form.instance.pk %}
+            Edit
+          {% else %}
+            Add
+          {% endif %}Route
+        </h1>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+      {% endblock %}
+    </div>
     {% include 'footer.html' %}
   </body>
 </html>

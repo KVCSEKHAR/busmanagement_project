@@ -19,8 +19,15 @@
       <div class="row">
         <div class="col-md-12">
           {% block content %}
-            <h1>Students</h1>
-            <a href="{% url 'staff_create' %}">Add Staff</a>
+            <h1>Staff Details</h1>
+            <a href="{% url 'staff_create' %}" class="btn btn-primary mb-2">Add Staff</a>
+            {% if messages %}
+            <div class="alert alert-danger">
+              {% for message in messages %}
+                <strong>{{ message }}</strong>
+              {% endfor %}
+              {% endif %}
+            </div>
             <table class="table table-bordered">
               <thead>
                 <tr>

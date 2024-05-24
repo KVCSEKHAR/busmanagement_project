@@ -20,6 +20,13 @@
           {% block content %}
             <h1>Route Information</h1>
             <a class="btn btn-primary" href="{% url 'route_create' %}">Add Route</a>
+            {% if messages %}
+              <div class="alert alert-danger">
+                {% for message in messages %}
+                  <strong>{{ message }}</strong>
+                {% endfor %}
+              </div>
+            {% endif %}
             <div class="table-responsive">
               <table class="table table-bordered mt-2">
                 <thead>
