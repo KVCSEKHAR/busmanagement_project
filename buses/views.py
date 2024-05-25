@@ -15,7 +15,7 @@ def bus_details(request, bus_no):
 
 @login_required
 def bus_create(request):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/buses')  # Redirect to a relevant page
     if request.method == 'POST':
@@ -29,7 +29,7 @@ def bus_create(request):
 
 @login_required
 def bus_update(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/buses')  # Redirect to a relevant page
     bus = get_object_or_404(Buses, pk=pk)
@@ -44,7 +44,7 @@ def bus_update(request, pk):
 
 @login_required
 def bus_delete(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/buses')  # Redirect to a relevant page
     bus = get_object_or_404(Buses, pk=pk)

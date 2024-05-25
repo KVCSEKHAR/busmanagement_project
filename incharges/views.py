@@ -17,7 +17,7 @@ def incharge_details(request, pk):
 
 @login_required
 def incharge_create(request):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/incharges')  # Redirect to a relevant page
     if request.method == 'POST':
@@ -31,7 +31,7 @@ def incharge_create(request):
 
 @login_required
 def incharge_update(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/incharges')  # Redirect to a relevant page
     incharge = get_object_or_404(Incharge, pk=pk)
@@ -46,7 +46,7 @@ def incharge_update(request, pk):
 
 @login_required
 def incharge_delete(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/drivers')  # Redirect to a relevant page
     incharge = get_object_or_404(Incharge, pk=pk)

@@ -18,7 +18,7 @@ def driver_detail(request, pk):
 
 @login_required
 def driver_create(request):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/drivers')  # Redirect to a relevant page
     if request.method == 'POST':
@@ -32,7 +32,7 @@ def driver_create(request):
 
 @login_required
 def driver_update(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/drivers')  # Redirect to a relevant page
     driver = get_object_or_404(Driver, pk=pk)
@@ -47,7 +47,7 @@ def driver_update(request, pk):
 
 @login_required
 def driver_delete(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/drivers')  # Redirect to a relevant page
     driver = get_object_or_404(Driver, pk=pk)

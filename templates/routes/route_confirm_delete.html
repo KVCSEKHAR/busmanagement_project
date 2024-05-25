@@ -20,8 +20,8 @@
       <p>Are you sure you want to delete "{{ route.route_name }}"?</p>
       <form method="post">
         {% csrf_token %}
-        <button type="submit">Confirm</button>
-        <a href="{% url 'route_list' %}">Cancel</a>
+        <button type="submit" class="btn bt-success">Confirm</button>
+        <a href="{% url 'route_list' %}" class="btn bt-warning">Cancel</a>
       </form>
     {% endblock %}
     {% include 'footer.html' %}

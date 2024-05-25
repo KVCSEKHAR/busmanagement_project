@@ -16,16 +16,51 @@
   <body>
     {% include 'header.html' %}
     {% block content %}
-      <h1>{{ route.route_name }}</h1>
-      <p>Start Location: {{ route.start_location }}</p>
-      <p>End Location: {{ route.end_location }}</p>
-      <p>Route Number: {{ route.route_number }}</p>
-      <p>Active: {{ route.active }}</p>
-      <a href="{% url 'route_update' route.pk %}">Edit</a>
-      <form action="{% url 'route_delete' route.pk %}" method="post">
-        {% csrf_token %}
-        <input type="submit" value="Delete" />
-      </form>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h2>Route Details: {{ route.route_name }}</h2>
+              </div>
+              <div class="card-body">
+                <p>
+                  <strong>Start Location:</strong> {{ route.start_location }}
+                </p>
+                <p>
+                  <strong>End Location:</strong> {{ route.end_location }}
+                </p>
+                <p>
+                  <strong>Route Number:</strong> {{ route.route_number }}
+                </p>
+                <p>
+                  <strong>Status:</strong> {{ route.active }}
+                </p>
+                <div class="card">
+                  <div class="card-body text-center">
+                    <table>
+                      <tr>
+                        <td>
+                          <a class="btn btn-primary" href="{% url 'route_update' route.pk %}">Edit</a>
+                        </td>
+                        <td>
+                          <form action="{% url 'route_delete' route.pk %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="Delete" class="btn btn-danger" />
+                          </form>
+                        </td>
+                        <td>
+                          <a href="javascript:history.go(-1);" class="btn btn-primary">Back</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     {% endblock %}
     {% include 'footer.html' %}
   </body>

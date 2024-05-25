@@ -25,6 +25,8 @@ urlpatterns = [
     path('incharges/', include('incharges.urls')),
     path('staff/', include('staff.urls')),
     path('students/', include('students.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('oauth/', include('social_django.urls', namespace='social')),
     
     # re_path(r'^.*$', index, name='index')
    

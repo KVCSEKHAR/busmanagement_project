@@ -19,7 +19,7 @@ def route_detail(request, pk):
 
 @login_required
 def route_create(request):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/incharges')  # Redirect to a relevant page
     if request.method == 'POST':
@@ -33,7 +33,7 @@ def route_create(request):
 
 @login_required
 def route_update(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/incharges')  # Redirect to a relevant page
     route = get_object_or_404(Route, pk=pk)
@@ -48,7 +48,7 @@ def route_update(request, pk):
 
 @login_required
 def route_delete(request, pk):
-    if not request.user.profile.user_type in 'admin':
+    if not request.user.profile.user_type in ['admin']:
         messages.error(request, 'You do not have admin permission to access this page.')
         return redirect('/incharges')  # Redirect to a relevant page
     route = get_object_or_404(Route, pk=pk)
